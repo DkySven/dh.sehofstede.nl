@@ -2,8 +2,8 @@
 $title = " | Photos";
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
-include 'header.php';
-include 'connect.php';
+include 'share/header.php';
+include 'share/connect.php';
 ?>
 <div id="foto">
 

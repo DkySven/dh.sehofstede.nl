@@ -1,5 +1,5 @@
 <?php
-include 'connect.php';
+include 'share/connect.php';
 
 if (isset($_POST["nextid"])) {
 	$nextvar = $_POST["nextid"];
@@ -45,7 +45,7 @@ if ($simp < 2) {
 
 //html starts here
 $title = "| Photos";
-include 'header.php';
+include 'share/header.php';
 ?>
 
 	<div id="tumb">

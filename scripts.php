@@ -1,6 +1,6 @@
 <?php
 $title = "| Scripts";
-include 'header.php';
+include 'share/header.php';
 ?>
 
 	<h1>

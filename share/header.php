@@ -18,14 +18,14 @@
 
 		My attempt to learn more of programming by building a website.
 			<p class="menu">
-				<a class="nav" href="index.php">Home</a>|
+				<a class="nav" href="../index.php">Home</a>|
 
-				<a class="nav" href="scripts.php">Scripts</a>|
+				<a class="nav" href="../scripts.php">Scripts</a>|
 				
-				<a class="nav" href="photo.php">Photos</a>|
+				<a class="nav" href="../photo.php">Photos</a>|
 				
 				<a class="nav" href="http://dirkheineh.wordpress.com">Blog</a>|
 
-				<a class="nav" href="links.php">Links</a>
+				<a class="nav" href="../links.php">Links</a>
 			</p>
 		</div>

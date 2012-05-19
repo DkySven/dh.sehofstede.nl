@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
+include 'share/header.php';
 ?>
 
 	<p>

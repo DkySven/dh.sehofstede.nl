@@ -1,6 +1,6 @@
 <?php
 $title = "| Links";
-include 'header.php';
+include 'share/header.php';
 ?>
 
 <h1>Links</h1>
