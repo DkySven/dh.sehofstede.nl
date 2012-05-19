@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<title>
+			Photo
+		</title>
+		<link rel="stylesheet" type="text/css" href="media/standard.css" />
+	</head>
+
+	<body>
+		<div id="foto">
+			{% for i in images %}
+				<h1>{{i.title}}</h1>
+				{{ i.img_html|safe }}
+				<br />
+				{{ i.desc }}
+				<p>
+			{% endfor %}
+		</div>
+
+	</body>
+
+</html>
