@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 include 'share/connect.php';
 
 if (isset($_POST["nextid"])) {
@@ -8,7 +10,7 @@ if (isset($_POST["nextid"])) {
 }
 
 //desc needs the `, because it is also a sql command. (stupid me) Should fix the column name asap.
-$qImg = 'SELECT img, title, `desc`, tag FROM images WHERE img_id=' . int($nextvar);
+$qImg = 'SELECT img, title, `desc`, tag FROM images WHERE img_id=' . $nextvar;
 $rImg = mysql_query( $qImg );
 if (!$rImg) {
 	die('Invalid query: ' . mysql_error());
