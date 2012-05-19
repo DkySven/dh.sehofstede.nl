@@ -1,0 +1,48 @@
+body {
+	color: #FFFFFF;
+	background-color: #1F1F1F;
+	font-family: georgia, "Times New Roman";
+
+}
+
+img.logo {
+	float: left;
+	margin:0 4px;
+}
+#top {
+	background-color: #171717;
+	padding: 0.5em;
+}
+p.menu {
+	float: right;
+	margin-right: 100px;
+	background-color: #050505;
+	padding: 0 5px;
+}
+
+#foto {
+	text-align: center;
+	float: left;
+	margin-left: 10em;
+}
+
+#tumb {
+	float: left;
+	margin-left: 6em;
+	margin-top: 6em;
+}
+
+a:link {
+	color: #f60;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #f60;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #f60;
+	text-decoration: underline;
+}

@@ -1,0 +1,59 @@
+#!/bin/bash
+#script to install Tarballs downloaded from aur.archlinux.org
+#By Dirk-Heine Hofstede, dirkheine.h at gmail dot com
+#Made somewhere in 2011, last reviewed on 18 March 2012
+
+#Usage: aur <tarball name without the .tar.gz>
+
+#Variables for your build directory and a directory to store used tarballs.
+bld_dir="/home/dirkheine/build"
+bck_tar="$bld_dir/oldtars"
+
+echo 'Is tarball located in Download or Backup folder?'
+
+OPTIONS="Download Backup"
+select opt in $OPTIONS; do
+	if [ "$opt" = "Download" ]; then
+		#Set dld_dir to your download folder
+        	dld_dir="/home/dirkheine/Bureaublad/Dingen"
+		break
+	elif [ "$opt" = "Backup" ]; then
+        	dld_dir=$bck_tar
+		break	
+	else
+		echo 'Bad Option'
+	fi
+done
+
+
+mv $dld_dir/$1.tar.gz $bld_dir/$1.tar.gz
+
+
+cd $bld_dir
+
+tar -zxvf $1.tar.gz
+
+mv $1.tar.gz $bck_tar/$1.tar.gz
+
+
+cd $1
+
+#Deleting old packages to prevent conflict during installation
+rm $1*.pkg.tar.xz
+echo 'Old packages deleted'
+
+	$EDITOR PKGBUILD
+	echo 'Abort script?(y/N)'
+	
+	read abort
+	if [ $abort = "y" ]; then
+	
+		exit
+	
+	fi
+
+makepkg -s
+
+sudo pacman -U $1*.pkg.tar.xz
+
+exit 0

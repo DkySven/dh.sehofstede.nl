@@ -1,0 +1,76 @@
+<?php
+include 'header.php';
+?>
+
+	<p>
+		Learning programming is pretty hard withouth a project to apply new learned knowledge on. That's why<br />
+		I made this site. It is for now a verhicle to write pages for to practise my programming skills and <br />
+		knowledge. Not much useful to find here yet.
+	</p>
+	
+	<p>
+		6 May 2012: <br />
+		Still working on learning Python and now also getting Git to work.
+	</p>
+
+	<p>
+		23 April 2012: <br />
+		After some experimenting I wrote a FizzBuzz script in Python:
+	<pre>
+		<code>
+			#!/usr/bin/env python
+			#FizzBuzz
+			
+			for i in range(101):
+				if i % 3 != 0 and i % 5 != 0:
+					print(i)
+					continue
+	
+				if i % 3 = 0:
+					print("Fizz")
+
+				if i % 5 = 0:
+					print("Buzz")
+		</code>
+	</pre>
+	<br />
+		You can find this script on the Scripts page.
+	<p>
+		I also wrote this as a for loop in PHP:
+	<pre>
+		<code>	for ($i = 1; $i <= 100; $i++) { </code>
+			<code>	if ($i % 3 != 0 and $i % 5 != 0) {</code>
+				<code>	echo $i;</code>
+			<code>	} </code>
+			<code>	if ($i % 3 == 0) {</code>
+			<code>		echo "Fizz";</code>
+			<code>	}</code>
+			<code>	if ($i % 5 == 0) {</code>
+			<code>		echo "Buzz";</code>
+			<code>	}</code>
+		<code>	}</code>
+	</pre>
+
+	<br />
+		You can find this <a href="fizzbuzz.php">here.</a>
+	</p>
+	<p>
+		9 April 2012: <br />
+		Photo tumbnails are now clickable.
+	</p>
+
+	<p>
+		6 April 2012: <br />
+		Photo page buttons are now powered by JavaScript to simplify the code and use one <br />
+		 variable for them. Also, at the left, you now see tumbnails of the photographs.
+	</p>
+	<p>
+		5 April 2012: <br />
+		Rolled out new version of the Photo page, which had been at show.php for a while. <br />
+		Now it does no longer show a random photograph,but gives the user navigation <br />
+		buttons instead. Old page can be found <a href="2photo.php">here</a>.
+
+</body>
+
+</html>
+
