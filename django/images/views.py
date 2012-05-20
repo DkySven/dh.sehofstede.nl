@@ -12,6 +12,13 @@ def show(request, page=None):
 	except PageNotAnInteger:
 		images = paginator.page(1)
 	except EmptyPage:
-		images = paginator.page(paginator.num_pages)
+		images = paginator.page(paginator.num_pages
+				)
+	tumb = image_list
+	
+	context = {
+		'images': images,
+		'tumb': tumb,
+		}
 
-	return render_to_response('photo.html', {'images': images})
+	return render_to_response('photo.html',  context)

@@ -6,7 +6,16 @@
 
 		<div id="tumb">
 			{% for t in tumb %}
-				<a href="/photo/{{ t.id }}/"><img src="{{ t.img.url }}" width=60 /></a>
+
+			<a href="/photo/{{ t.id }}/"><img src="{{ t.img.url }}" 
+				{% for i in images %}
+					{% ifequal t.id i.id %}
+						width=80
+					{% else %}
+						width=70
+					{% endifequal %}       
+				{% endfor %}
+					/></a>
 				<br />
 			{% endfor %}
 		</div>
