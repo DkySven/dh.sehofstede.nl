@@ -46,3 +46,7 @@ a:hover {
 	color: #f60;
 	text-decoration: underline;
 }
+
+.oud {
+	text-decoration: line-through;
+}
