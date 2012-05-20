@@ -1,12 +1,31 @@
 from images.models import *
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, get_object_or_404
 
-def imgid(request):
-	img_id = 1
+def show(request, imgid=None):
+	
+	if imgid == None:
+		image = ImageSubmit.objects.all()[0]
+	else:
+		image = get_object_or_404(ImageSubmit, id=imgid)
 
-def show(request):
+	previmg = ImageSubmit.objects.filter(id__lt=image.id).order_by("-id")
 
-	img_id = 1
+	if previmg:
+		previmg = previmg[0]
+	else:
+		previmg=None
 
-	images = ImageSubmit.objects.get(id=img_id)
-	return render_to_response('photo.html', {'images': images, 'img_id': img_id})
+	nextimg = ImageSubmit.objects.filter(id__gt=image.id)
+	
+	if nextimg:
+		nextimg = nextimg[0]
+	else:
+		nextimg=None
+
+	context = {
+		'previmg': previmg,
+		'image': image,
+		'nextimg': nextimg,
+	}
+
+	return render_to_response('photo.html', context)

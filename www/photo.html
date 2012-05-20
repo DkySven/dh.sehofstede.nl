@@ -4,18 +4,17 @@
 
 {% block content %}
 		<div id="foto">
-				<h1>{{images.title}}</h1>
-				{{ images.img_html|safe }}
+				<h1>{{image.title}}</h1>
+				{{ image.img_html|safe }}
 				<br />
-				{{ images.desc }}
-				{{ img_id }}
+				{{ image.desc }}
+
 				<p>
-				<form action="/" method="post">
-					{% if img_id > 1 %}
-						<input name="previous" type="submit" value="Previous" />
-					{% endif %}
-					<input name="next" type="submit" value="Next" />
-				</form>
+				{% if previmg %}
+				<a href="/photo/{{ previmg.id }}/">Previous</a>
+				{% endif %}
+
+				| <a href="/photo/{{ nextimg.id }}/">Next</a>
 				</p>
 		</div>
 		{% endblock %}

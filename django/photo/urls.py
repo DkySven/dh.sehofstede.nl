@@ -10,6 +10,7 @@ urlpatterns = patterns('',
     url(r'^$', 'website.views.index'),
     url(r'^scripts/', 'website.views.scripts'),
     url(r'^links/', 'website.views.links'),
+    url(r'^photo/(?P<imgid>\d+)/$', 'images.views.show'),
     url(r'^photo/', 'images.views.show'),
 
     # Uncomment the admin/doc line below to enable admin documentation:

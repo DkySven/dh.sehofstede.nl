@@ -39,7 +39,3 @@ class ImageSubmit(models.Model):
 		
 		image.save(filename)
 
-
-
-class ImgID(models.Model):
-	img = 1
