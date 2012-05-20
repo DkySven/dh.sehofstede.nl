@@ -11,7 +11,7 @@ class ImageSubmit(models.Model):
 		return self.title
 
 	def img_html(self):
-		return u"<img src=\"%s\"/>" % (self.img.url, )
+		return u"<img src=\"%s\" alt=\"%s\" />" % (self.img.url, self.tag,)
 	img_html.allow_tags = True
 
 	def save(self):
@@ -38,3 +38,8 @@ class ImageSubmit(models.Model):
 			image.thumbnail(size, Image.ANTIALIAS)
 		
 		image.save(filename)
+
+
+
+class ImgID(models.Model):
+	img = 1

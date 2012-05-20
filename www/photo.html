@@ -4,12 +4,18 @@
 
 {% block content %}
 		<div id="foto">
-			{% for i in images %}
-				<h1>{{i.title}}</h1>
-				{{ i.img_html|safe }}
+				<h1>{{images.title}}</h1>
+				{{ images.img_html|safe }}
 				<br />
-				{{ i.desc }}
+				{{ images.desc }}
+				{{ img_id }}
 				<p>
-			{% endfor %}
+				<form action="/" method="post">
+					{% if img_id > 1 %}
+						<input name="previous" type="submit" value="Previous" />
+					{% endif %}
+					<input name="next" type="submit" value="Next" />
+				</form>
+				</p>
 		</div>
 		{% endblock %}
