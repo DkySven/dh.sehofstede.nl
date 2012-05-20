@@ -1,7 +1,8 @@
-<?php
-$title = "| Scripts";
-include 'header.php';
-?>
+{% extends "header.html" %}
+
+{% block title %} | Scripts{% endblock %}
+
+{% block content %}
 
 	<h1>
 	Scripts
@@ -43,5 +44,5 @@ include 'header.php';
 	<p>
 	A Fizzbuzz script I wrote in Python.
 	</p>
-	</body>
-</html>
+
+	{% endblock %}

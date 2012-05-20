@@ -1,12 +1,8 @@
-<html>
-	<head>
-		<title>
-			Photo
-		</title>
-		<link rel="stylesheet" type="text/css" href="../media/standard.css" />
-	</head>
+{% extends "header.html" %}
 
-	<body>
+{% block title %} | Photo {% endblock %}
+
+{% block content %}
 		<div id="foto">
 			{% for i in images %}
 				<h1>{{i.title}}</h1>
@@ -16,7 +12,4 @@
 				<p>
 			{% endfor %}
 		</div>
-
-	</body>
-
-</html>
+		{% endblock %}

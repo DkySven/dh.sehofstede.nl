@@ -7,8 +7,10 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Examples:
     # url(r'^photo/', include('photo.foo.urls')),
+    url(r'^$', 'website.views.index'),
+    url(r'^scripts/', 'website.views.scripts'),
+    url(r'^links/', 'website.views.links'),
     url(r'^photo/', 'images.views.show'),
-    url(r'^$', 'images.views.index'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

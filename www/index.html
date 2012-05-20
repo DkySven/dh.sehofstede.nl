@@ -1,7 +1,6 @@
-<?php
-include 'header.php';
-?>
+{% extends "header.html" %}
 
+{% block content %}
 	<p>
 		Learning programming is pretty hard withouth a project to apply new learned knowledge on. That's why<br />
 		I made this site. It is for now a verhicle to write pages for to practise my programming skills and <br />
@@ -70,7 +69,4 @@ include 'header.php';
 		Now it does no longer show a random photograph,but gives the user navigation <br />
 		buttons instead. Old page can be found <a href="2photo.php">here</a>.
 
-</body>
-
-</html>
-
+		{% endblock %}

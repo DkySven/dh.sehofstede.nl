@@ -1,7 +1,8 @@
-<?php
-$title = "| Links";
-include 'header.php';
-?>
+{% extends "header.html" %}
+
+{% block title %} | Links {% endblock %}
+
+{% block content %}
 
 <h1>Links</h1>
 
@@ -19,6 +20,4 @@ include 'header.php';
 	A must read for everyone who wants to get involved in Open Source projects or simply help out a programmer.
 	</p>
 
-</body>
-
-</html>
+	{% endblock %}
