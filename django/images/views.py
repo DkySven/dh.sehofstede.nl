@@ -1,31 +1,17 @@
 from images.models import *
 from django.shortcuts import render_to_response, get_object_or_404
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-def show(request, imgid=None):
+def show(request, page=None):
 	
-	if imgid == None:
-		image = ImageSubmit.objects.all()[0]
-	else:
-		image = get_object_or_404(ImageSubmit, id=imgid)
+	image_list = ImageSubmit.objects.all()
+	paginator = Paginator(image_list, 1)
 
-	previmg = ImageSubmit.objects.filter(id__lt=image.id).order_by("-id")
+	try:
+		images = paginator.page(page)
+	except PageNotAnInteger:
+		images = paginator.page(1)
+	except EmptyPage:
+		images = paginator.page(paginator.num_pages)
 
-	if previmg:
-		previmg = previmg[0]
-	else:
-		previmg=None
-
-	nextimg = ImageSubmit.objects.filter(id__gt=image.id)
-	
-	if nextimg:
-		nextimg = nextimg[0]
-	else:
-		nextimg=None
-
-	context = {
-		'previmg': previmg,
-		'image': image,
-		'nextimg': nextimg,
-	}
-
-	return render_to_response('photo.html', context)
+	return render_to_response('photo.html', {'images': images})

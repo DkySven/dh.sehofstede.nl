@@ -3,18 +3,32 @@
 {% block title %} | Photo {% endblock %}
 
 {% block content %}
+
+		<div id="tumb">
+			{% for t in tumb %}
+				<a href="/photo/{{ t.id }}/"><img src="{{ t.img.url }}" width=60 /></a>
+				<br />
+			{% endfor %}
+		</div>
+
 		<div id="foto">
+			{% for image in images %}
 				<h1>{{image.title}}</h1>
 				{{ image.img_html|safe }}
 				<br />
 				{{ image.desc }}
+				{% endfor %}
 
 				<p>
-				{% if previmg %}
-				<a href="/photo/{{ previmg.id }}/">Previous</a>
+				{% if images.has_previous %}
+				<a href="/photo/{{ images.previous_page_number }}/">Previous</a>
 				{% endif %}
 
-				| <a href="/photo/{{ nextimg.id }}/">Next</a>
+				| 
+
+				{% if images.has_next %}
+				<a href="/photo/{{ images.next_page_number }}/">Next</a>
+				{% endif %}
 				</p>
 		</div>
 		{% endblock %}
