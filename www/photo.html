@@ -10,9 +10,9 @@
 			<a href="/photo/{{ t.id }}/"><img src="{{ t.img.url }}" 
 				{% for i in images %}
 					{% ifequal t.id i.id %}
-						width=80
+						height=45
 					{% else %}
-						width=70
+						height=40
 					{% endifequal %}       
 				{% endfor %}
 					/></a>

@@ -11,7 +11,7 @@ class ImageSubmit(models.Model):
 		return self.title
 
 	def img_html(self):
-		return u"<img src=\"%s\" alt=\"%s\" />" % (self.img.url, self.tag,)
+		return u"<img src=\"%s\" alt=\"%s\" height=400/>" % (self.img.url, self.tag,)
 	img_html.allow_tags = True
 	
 	def save(self):
@@ -27,11 +27,11 @@ class ImageSubmit(models.Model):
 		print dir(image)
 		imgh = image.size[0]
 		imgv = image.size[1]
-		ratio = float(imgh)/600
+		ratio = float(imgv)/450
 
-		if imgh > 600:
-			imgh=600
-			imgv=int(imgv/ratio)
+		if imgv > 450:
+			imgv=450
+			imgh=int(imgh/ratio)
 
 			size=(imgh, imgv)
 
